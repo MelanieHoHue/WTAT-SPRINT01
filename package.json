@@ -1,0 +1,19 @@
+{
+  "name": "wtat-sprint01",
+  "version": "1.0.0",
+  "description": "First assignment wtat ss21",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MelanieHoHue/WTAT-SPRINT01.git"
+  },
+  "author": "Melanie Holzapfel-Huettenrauch (s0508130)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MelanieHoHue/WTAT-SPRINT01/issues"
+  },
+  "homepage": "https://github.com/MelanieHoHue/WTAT-SPRINT01#readme"
+}
