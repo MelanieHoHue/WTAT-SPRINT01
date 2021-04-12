@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/MelanieHoHue/WTAT-SPRINT01#readme",
   "dependencies": {
+    "curl": "^0.1.4",
     "http-status-codes": "^2.1.4"
   }
 }
