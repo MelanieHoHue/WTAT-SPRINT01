@@ -4,12 +4,9 @@ const   http = require("http"),
         httpStatus = require("http-status-codes"),
         port = 3000,
         app = http.createServer(),
-        routeResponseMap = {
-            "/info": "<h1>Info Page</h1>",
-            "/contact": "<h1>Contact Us</h1>",
-            "/about": "<h1>Learn More About Us.</h1>",
-            "/hello": "<h1>Say hello by emailing us here</h1>",
-            "/error": "<h1>Sorry the page you are looking for is not here.</h1>"
+        fs = require("fs"),
+        routeMap = {
+            "/": "views/index.html"
         };
 
 let responseMessage = "";
@@ -24,13 +21,14 @@ app.on("request", (req, res) => {
         "Content-Type": "text/html"
     });
 
-    if(routeResponseMap[req.url]) {
-        responseMessage = routeResponseMap[req.url]
+    if(routeMap[req.url]) {
+        fs.readFile(routeMap[req.url], (error, data) => {
+            res.write(data);
+            res.end();
+        });
     } else {
-        responseMessage = "<h1>Welcome!</h1>";
+        res.end("<h1>Sorry! Page not found!</h1>");
     }
-
-    res.end(responseMessage), 20000
 });
 
 app.listen(port);
