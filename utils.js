@@ -2,17 +2,22 @@
 
 const fs = require("fs"),
     customReadFile = (file_path, res) => {
-        console.log(file_path);
-        if(fs.existsSync(file_path)) {
-            console.log(fs.existsSync(file_path));
-            fs.readFile(file_path, (error, data) => {
-                console.log(file_path);
-                if (error) {
-                    console.log("Error reading the file", error);
-                }
-                res.end(data);
-            });
-        }
+        
+        let file = file_path.toString();
+
+        console.log("file:", file);
+        console.log("exists:", fs.existsSync(file));
+
+        fs.readFile(file, (error, data) => {
+            if (error) {
+                console.log("Error reading the file", error);
+
+                res.writeHead(500, contentTypeMap["html"]);
+                res.end("Error reading the file", file);
+            }
+
+            res.end(data, "UTF-8");
+        });
     },
     contentTypeMap = {
         "html": {"Content-Type": "text/html"},

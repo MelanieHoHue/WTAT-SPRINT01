@@ -10,6 +10,8 @@ const httpStatus =      require("http-status-codes"),
         let method = req.method,
             url = req.url;
 
+        console.log("url:", url);
+
         try {
             
             if (routes[method][url]){
@@ -43,11 +45,11 @@ const httpStatus =      require("http-status-codes"),
                 res.writeHead(200, contentTypes["html"]);
                 customReadFile(routeMap["info"], res);
             },
-            "/public/css/bootstrap.min.css": (req, res) => {
+            "/bootstrap.min.css": (req, res) => {
                 res.writeHead(200, contentTypes["css"]);
                 customReadFile(routeMap["bootstrap.css"], res);
             },
-            "/public/css/app.css": (req, res) => {
+            "/app.css": (req, res) => {
                 res.writeHead(200, contentTypes["css"]);
                 customReadFile([routeMap["app.css"]], res);
             }

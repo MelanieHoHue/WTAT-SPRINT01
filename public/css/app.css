@@ -1,3 +1,15 @@
 body {
     color: grey;
 }
+
+header {
+    padding: 2% 3%;;
+}
+
+main {
+    padding: 2%;
+}
+
+.follow-sec {
+    margin-top: 50px;
+}
