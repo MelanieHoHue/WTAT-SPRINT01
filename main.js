@@ -1,25 +1,25 @@
-const utils = require("./utils");
+"use strict";
 
-const port = 3000,
-    http = require("http"),
-    httpStatus = require("http-status-codes"),
-    router = require("./router"),
-    contentTpyes = require("./contentTypes"),
-    util = require("./utils"),
-    app = http.createServer(router.handle);
+const port =        3000,
+    http =          require("http"),
+    httpStatus =    require("http-status-codes"),
+    router =        require("./router"),
+    contentTpyes =  require("./contentTypes"),
+    utils =          require("./utils"),
+    app =           http.createServer(router.handle);
 
 router.get("/", (req, res) => {
-    res.writerHead(200, contentTpyes.html);
+    res.writeHead(200, contentTpyes.html);
     utils.getFile("views/index.html", res);
 });
 
-router.get("/contact", (req, res) => {
-    res.writerHead(200, contentTpyes.html);
+router.get("/contact.html", (req, res) => {
+    res.writeHead(200, contentTpyes.html);
     utils.getFile("views/contact.html", res);
 });
 
-router.get("/project-idea", (req, res) => {
-    res.writerHead(200, contentTpyes.html);
+router.get("/project-idea.html", (req, res) => {
+    res.writeHead(200, contentTpyes.html);
     utils.getFile("views/project-idea.html", res);
 });
 

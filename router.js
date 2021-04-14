@@ -1,6 +1,8 @@
-const httpStatus = require("http-status-codes"),
-    contentTypes = require("./contentTypes"),
-    utils = require("./utils"),
+"use strict";
+
+const httpStatus =  require("http-status-codes"),
+    contentTypes =  require("./contentTypes"),
+    utils =         require("./utils"),
     routes = {
         "GET": {},
         "POST": {}
@@ -9,10 +11,11 @@ const httpStatus = require("http-status-codes"),
 
         let method = req.method,
             url = req.url;
-
+        console.log("url", url);
         try {
             routes[method][url](req, res);
         } catch (e) {
+            console.log("error", e);
             res.writeHead(200, contentTypes.html);
             utils.getFile("views/error.html", res);
         }
