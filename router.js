@@ -31,17 +31,25 @@ const httpStatus =      require("http-status-codes"),
     },
     routes = {
         "GET": {
-            "/info": (req, res) => {
-                res.writeHead(200, contentTypes["plain"]);
-                res.end("Welcome to the Info Page!");
-            },
             "/": (req, res) => {
                 res.writeHead(200, contentTypes["html"]);
                 customReadFile(routeMap["/"], res);
             },
             "/index": (req, res) => {
                 res.writeHead(200, contentTypes["html"]);
-                customReadFile("views/index.html", res);
+                customReadFile(routeMap["/"], res);
+            },
+            "/info": (req, res) => {
+                res.writeHead(200, contentTypes["html"]);
+                customReadFile(routeMap["info"], res);
+            },
+            "/public/css/bootstrap.min.css": (req, res) => {
+                res.writeHead(200, contentTypes["css"]);
+                customReadFile(routeMap["bootstrap.css"], res);
+            },
+            "/public/css/app.css": (req, res) => {
+                res.writeHead(200, contentTypes["css"]);
+                customReadFile([routeMap["app.css"]], res);
             }
         },
         "POST": {
