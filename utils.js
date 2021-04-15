@@ -31,7 +31,12 @@ const fs = require("fs"),
         "info": "views/info.html",
         "thanks": "views/thanks.html",
         "bootstrap.css": "public/css/bootstrap.min.css",
-        "app.css": "public/css/app.css"
+        "app.css": "public/css/app.css",
+        "Mock-1.png": "public/images/WTAT-Project-Mock-1.png",
+        "Mock-2.png": "public/images/WTAT-Project-Mock-2.png",
+        "Mock-3.png": "public/images/WTAT-Project-Mock-3.png",
+        "Mock-4.png": "public/images/WTAT-Project-Mock-4.png",
+        "Mock-5.png": "public/images/WTAT-Project-Mock-5.png",
     };
 
 module.exports = { customReadFile, contentTypeMap, routeMap};

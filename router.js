@@ -52,6 +52,27 @@ const httpStatus =      require("http-status-codes"),
             "/app.css": (req, res) => {
                 res.writeHead(200, contentTypes["css"]);
                 customReadFile([routeMap["app.css"]], res);
+            },
+            "/mock-1": (req, res) => {
+                res.writeHead(200, contentTypes["png"]);
+                customReadFile([routeMap["Mock-1.png"]], res);
+            }
+            ,
+            "/mock-2": (req, res) => {
+                res.writeHead(200, contentTypes["png"]);
+                customReadFile([routeMap["Mock-2.png"]], res);
+            },
+            "/mock-3": (req, res) => {
+                res.writeHead(200, contentTypes["png"]);
+                customReadFile([routeMap["Mock-3.png"]], res);
+            },
+            "/mock-4": (req, res) => {
+                res.writeHead(200, contentTypes["png"]);
+                customReadFile([routeMap["Mock-4.png"]], res);
+            },
+            "/mock-5": (req, res) => {
+                res.writeHead(200, contentTypes["png"]);
+                customReadFile([routeMap["Mock-5.png"]], res);
             }
         },
         "POST": {
