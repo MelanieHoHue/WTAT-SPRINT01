@@ -45,6 +45,10 @@ const httpStatus =      require("http-status-codes"),
                 res.writeHead(200, contentTypes["html"]);
                 customReadFile(routeMap["info"], res);
             },
+            "/thanks": (req, res) => {
+                res.writeHead(200, contentTypes["html"]);
+                customReadFile(routeMap["thanks"], res);
+            },
             "/bootstrap.min.css": (req, res) => {
                 res.writeHead(200, contentTypes["css"]);
                 customReadFile(routeMap["bootstrap.css"], res);
